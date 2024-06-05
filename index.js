@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 const corsOption={
     origin:'https://chatting-frontend-delta.vercel.app',
+    methods:{"POST","GET"},
     credentials:true
 };
 app.use(cors(corsOption)); 
