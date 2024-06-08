@@ -11,7 +11,6 @@ export const register = async (req, res) => {
         if (password !== confirmPassword) {
             return res.status(400).json({ message: "Password do not match" });
         }
-
         const user = await User.findOne({ username });
         if (user) {
             return res.status(400).json({ message: "Username already exit try different" });
