@@ -17,10 +17,16 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 app.use(cookieParser());
 const corsOption={
-    origin:'https://chatting-frontend-delta.vercel.app',
-    credentials:true
+    origin:'https://chatting-frontend-delta.vercel.app'
 };
-app.use(cors(corsOption)); 
+
+app.use(cors(
+ {
+  origin:corsOption,
+  methods: "GET, POST, PUT, DELETE",
+  credentials: true
+ }
+)); 
 
 
 // routes
